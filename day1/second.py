@@ -1,4 +1,4 @@
-import logging # to clean array (remove \newlines)
+
 
 day_one = open("input.txt", "r") #mode r=read w=write r+=read+write
 array = day_one.readlines()
