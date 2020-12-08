@@ -25,15 +25,16 @@ acc -99
 acc +1
 jmp -4
 acc +6
+
 These instructions are visited in this order:
 
-nop +0  | 1
+nop +0  | 1 = 0
 acc +1  | 2, 8(!)
 jmp +4  | 3
-acc +3  | 6
+acc +3  | 6 = 5
 jmp -3  | 7
 acc -99 |
-acc +1  | 4
+acc +1  | 4 = 2
 jmp -4  | 5
 acc +6  |
 
