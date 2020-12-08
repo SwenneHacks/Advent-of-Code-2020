@@ -2,7 +2,7 @@
 
 result = open("input.txt", "r") #mode r=read w=write r+=read+write
 array = result.readlines()
-counter = 5
+counter = 0
 
 #array has newlines attached to the numbers so I can't summ them.
 #print(array)
@@ -20,12 +20,14 @@ values = []
 numbers = []
 commands = []
 def weird_game(clean, counter):
+    done = [False] * len(clean)
     for i in range(len(clean) - 1):
         data = clean[i].split(' ')
         cmd = data[0]
         nbr = data[1]
         commands == commands.append(cmd)
         values == values.append(nbr)
+
     #print(commands)
     
     for plus in values:
@@ -33,11 +35,13 @@ def weird_game(clean, counter):
         numbers.append(int(val))
     # print(numbers)
 
-    # for n in range(len(commands) - 1):
-    #     if commands[n] == "nop":
-    #         nop == nop + 1
     nop = commands.count('nop')
-    print(nop)
+    print("nop:", nop)
+    while i < len(commands):
+        if done == True:
+            break
+        done[i] = True
+        call = clean[i]
 
 print(weird_game(clean, counter))
 
