@@ -1,4 +1,4 @@
-day_one = open("file.txt", "r") #mode r=read w=write r+=read+write
+day_one = open("py.txt", "r") #mode r=read w=write r+=read+write
 
 #this one returns true/false (but only r mode)
 #       print(day_one.readable())
@@ -16,10 +16,10 @@ day_one = open("file.txt", "r") #mode r=read w=write r+=read+write
 #this one returns the 3rd element of the array
 #        print(day_one.readlines()[3])
 
-#now using a loop to print each element (one by one)
+#now using a loop to print each element (one by one) casted to int
 #       for number in day_one.readlines():
-#           print(number)
+#           print(int(number))
 
-array = day_one.readlines()
+array = day_one.readlines() # array of char* (strings)
 
 day_one.close()
