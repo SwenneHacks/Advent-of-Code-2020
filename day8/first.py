@@ -1,6 +1,7 @@
 # day8
 
 result = open("input.txt", "r") #mode r=read w=write r+=read+write
+instructions = open("input.txt", "r").read().split("\n")
 array = result.readlines()
 counter = 0
 
@@ -20,7 +21,25 @@ values = []
 numbers = []
 commands = []
 def weird_game(clean, counter):
+    
+    i = 0
+    acc = 0
     done = [False] * len(clean)
+    while i < len(instructions):
+        if done[i] == True:
+            break
+        done[i] = True
+        call = instructions[i]
+        if call[0:3] == "nop":
+            i += 1
+            continue
+        elif call[0:3] == "acc":
+            acc += int(call[4:])
+        elif call[0:3] == "jmp":
+            i += int(call[4:]) - 1
+        i += 1
+    print(acc)
+
     for i in range(len(clean) - 1):
         data = clean[i].split(' ')
         cmd = data[0]
@@ -36,12 +55,8 @@ def weird_game(clean, counter):
     # print(numbers)
 
     nop = commands.count('nop')
-    print("nop:", nop)
-    while i < len(commands):
-        if done == True:
-            break
-        done[i] = True
-        call = clean[i]
+    print(nop)
+    
 
 print(weird_game(clean, counter))
 
